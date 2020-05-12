@@ -40,8 +40,9 @@ const directions = [
 const findAllMazePaths = (maze, path = []) => {
   // get current position
   let position = [0, 0];
-  const visitedMaze = maze.map(rows => [...rows]);
+  const visitedMaze = maze.map(rows => [...rows]); // n
   path.forEach(t => {
+    // n
     const dir = directions.find(d => d.name === t);
     // block visited positions
     visitedMaze[position[0]][position[1]] = 'X';
@@ -67,7 +68,7 @@ const findAllMazePaths = (maze, path = []) => {
   if (possibleDirs.length === 0) return [];
 
   return possibleDirs.reduce(
-    (arr, pd) => [...arr, ...findAllMazePaths(visitedMaze, [...path, pd.name])],
+    (arr, pd) => [...arr, ...findAllMazePaths(visitedMaze, [...path, pd.name])], //n*n
     []
   );
 };
