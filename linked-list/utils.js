@@ -1,3 +1,5 @@
+const LinkedList = require('./linked-list');
+
 const print = ll => {
   let node = ll.head;
   if (node === null) return console.log('Head: null');

@@ -1,6 +1,7 @@
 module.exports = class LinkedList {
-  constructor() {
-    this.head = null;
+  constructor(node) {
+    if (node instanceof Node) this.head = node;
+    else this.head = null;
   }
   insertFirst(val) {
     this.head = new Node(this.head, val);
